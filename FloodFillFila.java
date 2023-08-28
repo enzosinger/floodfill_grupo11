@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 class Fila {
@@ -65,8 +67,7 @@ public class FloodFillFila {
             {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
     };
-    static int corMudar = 0; //cor que queremos que mude
-    static int novaCor = 2; //cor que será usada pra preencher
+
 
     static Fila fila = new Fila(1000); //tamanho da fila
 
@@ -80,7 +81,7 @@ public class FloodFillFila {
 
         //solicita o ponto de partida para o FloodFill atuar
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite as coordenadas x e y (separadas por espaço):");
+        System.out.println("\u001B[0mDigite as coordenadas x e y (separadas por espaço):");
         int pontoInicialY = scanner.nextInt();
         int pontoInicialX = scanner.nextInt();
 
@@ -91,6 +92,14 @@ public class FloodFillFila {
         //cria uma array que armazena coordenadas x e y, onde começará o FloodFill
         int[] pontoInicial = {x, y};
         fila.adicionar(pontoInicial);
+
+        Scanner cm = new Scanner(System.in);
+        System.out.println("\u001B[0mDigite a cor que deseja mudar (0,1,2): ");
+        int corMudar = cm.nextInt();
+
+        Scanner nc = new Scanner(System.in);
+        System.out.println("\u001B[0mDigite a nova cor desejada (0,1,2): ");
+        int novaCor = nc.nextInt();
 
         //loop continua enquanto a fila nao está vazia
         while (!fila.estaVazia()) {
@@ -135,11 +144,14 @@ public class FloodFillFila {
             // Loop que percorre as colunas da matriz
             for (int j = 0; j < matriz[i].length; j++) {
                 // Define a cor do texto com base no valor da matriz
-                if (matriz[i][j] == 2) {
-                    cor = "\u001B[31m"; // Vermelho (cor de preenchimento)
+                if (matriz[i][j] == 1) {
+                    cor = "\u001B[34m"; // Azul (cor do 1)
+                } else if (matriz[i][j] == 2) {
+                    cor = "\u001B[31m"; // Vermelho (cor do 2)
                 } else {
                     cor = "\u001B[0m"; // Reset (cor padrão)
                 }
+
 
                 System.out.print(cor + matriz[i][j] + " ");
             }
