@@ -97,10 +97,10 @@ public class FloodFillPilha {
             matriz[x][y] = novaCor; //altera a cor na matriz para a nova cor
 
             //criando arrays com as coordenadas dos 4 lados do ponto e adicionando na pilha, para que sejam checados
-            int[] esquerda = {x - 1, y};
-            int[] direita = {x + 1, y};
-            int[] cima = {x, y - 1};
-            int[] baixo = {x, y + 1};
+            int[] esquerda = {x, y - 1};
+            int[] direita = {x, y + 1};
+            int[] cima = {x - 1, y};
+            int[] baixo = {x + 1, y};
 
             pilha.adicionar(esquerda);
             pilha.adicionar(direita);
