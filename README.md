@@ -1,7 +1,9 @@
 # floodfill_grupo11
 # Algoritmo Flood Fill com Fila em Java
 
-Este programa em Java implementa o algoritmo Flood Fill em uma matriz 2D. O algoritmo começa preenchendo uma área na matriz a partir de um ponto de partida escolhido pelo usuário. A região é preenchida com uma nova cor, substituindo a cor original do ponto de partida e se espalhando para pontos adjacentes que possuam a mesma cor original.
+Este programa em Java implementa o algoritmo Flood Fill em uma matriz 2D. O algoritmo começa preenchendo uma área na matriz a partir de um ponto de partida escolhido pelo usuário. A região é preenchida com uma nova cor, substituindo a cor original do ponto de partida e se espalhando para pontos adjacentes que possuam a mesma cor original.  
+
+Esse projeto foi desenvolvido por Enzo Singer, João Pedro Corrêa e Rodrigo Kenji, alunos de Engenharia de Software na PUCPR. 
 
 ## Como Funciona
 
